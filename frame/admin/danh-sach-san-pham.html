@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Lý Sản Phẩm - Admin Harmonia</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amber: { 50: '#fffbeb', 100: '#fef3c7', 500: '#f59e0b', 600: '#d97706', 700: '#b45309' },
+            dark: { 900: '#0b0f19', 800: '#0f172a', 700: '#1e293b' }
+          },
+          fontFamily: { heading: ['Outfit', 'sans-serif'], sans: ['Plus Jakarta Sans', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col md:flex-row">
+
+  <!-- ADMIN SIDEBAR -->
+  <aside class="w-full md:w-64 bg-slate-950 border-r border-slate-800 p-6 flex flex-col justify-between flex-shrink-0">
+    <div class="space-y-8">
+      <a href="../index.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-amber-500 flex items-center justify-center text-slate-950 font-bold text-lg">
+          <i class="fa-solid fa-music"></i>
+        </div>
+        <div>
+          <span class="font-heading font-extrabold text-xl tracking-wider text-white block leading-none">HARMONIA</span>
+          <span class="text-[9px] uppercase tracking-widest text-amber-400 font-bold">Admin Control</span>
+        </div>
+      </a>
+
+      <nav class="space-y-1 text-sm font-medium text-slate-400">
+        <a href="index.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-900 hover:text-white transition">
+          <i class="fa-solid fa-chart-pie w-5 text-amber-500"></i> Tổng Quan (Dashboard)
+        </a>
+        <a href="danh-sach-san-pham.html" class="flex items-center gap-3 p-3 rounded-xl bg-amber-500/10 text-amber-400 font-semibold border border-amber-500/20">
+          <i class="fa-solid fa-box w-5"></i> Danh Sách Sản Phẩm
+        </a>
+        <a href="them-san-pham.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-900 hover:text-white transition">
+          <i class="fa-solid fa-plus w-5 text-amber-500"></i> Thêm Sản Phẩm Mới
+        </a>
+        <a href="danh-sach-danh-muc.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-900 hover:text-white transition">
+          <i class="fa-solid fa-folder-tree w-5 text-amber-500"></i> Danh Sách Danh Mục
+        </a>
+        <a href="them-danh-muc.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-900 hover:text-white transition">
+          <i class="fa-solid fa-folder-plus w-5 text-amber-500"></i> Thêm Danh Mục Mới
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- MAIN AREA -->
+  <div class="flex-1 flex flex-col min-w-0">
+    
+    <header class="h-20 bg-slate-950 border-b border-slate-800 px-6 flex items-center justify-between">
+      <h1 class="text-xl font-bold text-white font-heading">Quản Lý Danh Sách Sản Phẩm</h1>
+      <a href="them-san-pham.html" class="px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-xs font-bold transition flex items-center gap-2">
+        <i class="fa-solid fa-plus"></i> Thêm Sản Phẩm Mới
+      </a>
+    </header>
+
+    <main class="p-6 sm:p-8 space-y-6 flex-1 overflow-y-auto">
+      
+      <div class="bg-slate-800/80 rounded-2xl border border-slate-700 overflow-hidden shadow-sm">
+        
+        <!-- Table Control Top Filter -->
+        <div class="p-6 border-b border-slate-700/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="relative w-full sm:w-72">
+            <input type="text" placeholder="Tìm tên nhạc cụ..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-amber-500">
+            <i class="fa-solid fa-magnifying-glass absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+          </div>
+
+          <div class="flex items-center gap-3 w-full sm:w-auto">
+            <select class="bg-slate-900 border border-slate-700 text-slate-300 text-xs rounded-xl px-3 py-2 focus:outline-none">
+              <option>Tất cả danh mục</option>
+              <option>Đàn Guitar</option>
+              <option>Đàn Piano</option>
+              <option>Bộ Trống</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Product Table -->
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-slate-900/80 text-slate-400 uppercase text-[10px] font-bold border-b border-slate-700">
+              <tr>
+                <th class="p-4">Hình Ảnh</th>
+                <th class="p-4">Tên Sản Phẩm</th>
+                <th class="p-4">Danh Mục</th>
+                <th class="p-4">Giá Bán</th>
+                <th class="p-4">Tồn Kho</th>
+                <th class="p-4">Trạng Thái</th>
+                <th class="p-4 text-right">Thao Tác</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-700/60">
+              
+              <tr>
+                <td class="p-4">
+                  <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=150&auto=format&fit=crop" class="w-12 h-12 rounded-lg object-cover bg-slate-900 border border-slate-700">
+                </td>
+                <td class="p-4 font-bold text-white">Fender Player Stratocaster Maple</td>
+                <td class="p-4 text-slate-400">Guitar Điện</td>
+                <td class="p-4 font-bold text-amber-400">18.500.000đ</td>
+                <td class="p-4 font-semibold text-emerald-400">8 cây</td>
+                <td class="p-4"><span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold">Hiển thị</span></td>
+                <td class="p-4 text-right space-x-2">
+                  <button class="px-2.5 py-1 bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 rounded-lg text-xs font-bold">Sửa</button>
+                  <button onclick="if(confirm('Xóa sản phẩm này?')) this.closest('tr').remove()" class="px-2.5 py-1 bg-red-600/20 text-red-400 hover:bg-red-600/30 rounded-lg text-xs font-bold">Xóa</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="p-4">
+                  <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=150&auto=format&fit=crop" class="w-12 h-12 rounded-lg object-cover bg-slate-900 border border-slate-700">
+                </td>
+                <td class="p-4 font-bold text-white">Đàn Piano Điện Yamaha P-125B</td>
+                <td class="p-4 text-slate-400">Piano Điện</td>
+                <td class="p-4 font-bold text-amber-400">16.900.000đ</td>
+                <td class="p-4 font-semibold text-emerald-400">15 cây</td>
+                <td class="p-4"><span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold">Hiển thị</span></td>
+                <td class="p-4 text-right space-x-2">
+                  <button class="px-2.5 py-1 bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 rounded-lg text-xs font-bold">Sửa</button>
+                  <button onclick="if(confirm('Xóa sản phẩm này?')) this.closest('tr').remove()" class="px-2.5 py-1 bg-red-600/20 text-red-400 hover:bg-red-600/30 rounded-lg text-xs font-bold">Xóa</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

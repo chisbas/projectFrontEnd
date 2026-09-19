@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harmonia Music - Thế Giới Nhạc Cụ Chính Hãng & Ca Cao Cấp</title>
+  <meta name="description" content="Chuyên cung cấp các loại nhạc cụ chính hãng: Piano, Guitar, Saxophone, Trống, Violin từ các thương hiệu hàng đầu thế giới.">
+  
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amber: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+            },
+            dark: {
+              900: '#0b0f19',
+              800: '#0f172a',
+              700: '#1e293b',
+              600: '#334155'
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-4">
+        <span><i class="fa-solid fa-phone text-amber-500 mr-1"></i> Hotline: 1900 6868</span>
+        <span class="hidden md:inline"><i class="fa-solid fa-location-dot text-amber-500 mr-1"></i> 123 Lý Thường Kiệt, Q.10, TP.HCM</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="gioi-thieu.html" class="hover:text-amber-500 transition">Về Chúng Tôi</a>
+        <span>|</span>
+        <a href="lien-he.html" class="hover:text-amber-500 transition">Hệ Thống Showroom</a>
+        <span>|</span>
+        <a href="dang-nhap.html" class="hover:text-amber-500 transition"><i class="fa-regular fa-user mr-1"></i> Tài khoản</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION BAR -->
+  <header class="sticky top-0 z-50 glass-nav shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-600 to-amber-400 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-amber-500/20">
+            <i class="fa-solid fa-music"></i>
+          </div>
+          <div>
+            <span class="font-heading font-extrabold text-2xl tracking-tight text-white block leading-none">HARMONIA</span>
+            <span class="text-[10px] tracking-widest uppercase text-amber-400 font-semibold">Premium Instruments</span>
+          </div>
+        </a>
+
+        <!-- Search Bar (Desktop & Tablet) -->
+        <div class="hidden md:flex flex-1 max-w-md mx-8 relative">
+          <input type="text" placeholder="Tìm kiếm guitar, piano, saxophone..." class="w-full bg-slate-800/80 text-white placeholder-slate-400 text-sm rounded-full pl-5 pr-12 py-2.5 border border-slate-700 focus:outline-none focus:border-amber-500 transition">
+          <button class="absolute right-1 top-1/2 -translate-y-1/2 w-9 h-9 bg-amber-600 hover:bg-amber-500 text-white rounded-full flex items-center justify-center transition">
+            <i class="fa-solid fa-magnifying-glass text-sm"></i>
+          </button>
+        </div>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-200">
+          <a href="index.html" class="hover:text-amber-400 transition">Trang Chủ</a>
+          <a href="san-pham.html" class="hover:text-amber-400 transition">Sản Phẩm</a>
+          <a href="bai-viet.html" class="hover:text-amber-400 transition">Tin Tức</a>
+          <a href="gioi-thieu.html" class="hover:text-amber-400 transition">Giới Thiệu</a>
+          <a href="lien-he.html" class="hover:text-amber-400 transition">Liên Hệ</a>
+        </nav>
+
+        <!-- Right Utility Icons -->
+        <div class="flex items-center gap-4">
+          <!-- User Menu -->
+          <a href="dang-nhap.html" class="hidden sm:flex items-center justify-center w-10 h-10 rounded-full bg-slate-800 text-slate-300 hover:text-amber-400 hover:bg-slate-700 transition">
+            <i class="fa-regular fa-user text-lg"></i>
+          </a>
+
+          <!-- Cart Icon with Counter -->
+          <a href="gio-hang.html" class="relative flex items-center justify-center w-10 h-10 rounded-full bg-slate-800 text-slate-300 hover:text-amber-400 hover:bg-slate-700 transition">
+            <i class="fa-solid fa-cart-shopping text-lg"></i>
+            <span class="cart-badge-count absolute -top-1 -right-1 bg-amber-500 text-slate-950 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+          </a>
+
+          <!-- Admin Quick Link -->
+          <a href="admin/index.html" class="hidden xl:flex items-center gap-2 text-xs font-semibold px-3 py-1.5 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/30 hover:bg-amber-500/20 transition">
+            <i class="fa-solid fa-lock text-xs"></i> Admin Portal
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 rounded-lg bg-slate-800 text-slate-300 flex items-center justify-center hover:bg-slate-700 transition">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER MENU OVERLAY -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/60 z-50 hidden backdrop-blur-sm"></div>
+  
+  <!-- MOBILE DRAWER MENU -->
+  <div id="mobile-menu-drawer" class="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] bg-slate-900 text-white z-50 transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between shadow-2xl">
+    <div>
+      <div class="p-5 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center text-slate-950 font-bold">
+            <i class="fa-solid fa-music"></i>
+          </div>
+          <span class="font-heading font-bold text-lg tracking-wider text-amber-400">HARMONIA</span>
+        </div>
+        <button id="mobile-menu-close" class="text-slate-400 hover:text-white p-2 text-xl">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Search -->
+      <div class="p-4 border-b border-slate-800">
+        <div class="relative">
+          <input type="text" placeholder="Tìm kiếm nhạc cụ..." class="w-full bg-slate-800 text-white text-sm rounded-lg pl-4 pr-10 py-2 border border-slate-700 focus:outline-none focus:border-amber-500">
+          <i class="fa-solid fa-magnifying-glass absolute right-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+        </div>
+      </div>
+
+      <nav class="p-4 flex flex-col gap-1 font-medium">
+        <a href="index.html" class="mobile-nav-link p-3 rounded-lg hover:bg-slate-800 flex items-center gap-3 text-slate-200">
+          <i class="fa-solid fa-house w-5 text-amber-500"></i> Trang Chủ
+        </a>
+        <a href="san-pham.html" class="mobile-nav-link p-3 rounded-lg hover:bg-slate-800 flex items-center gap-3 text-slate-200">
+          <i class="fa-solid fa-guitar w-5 text-amber-500"></i> Tất Cả Sản Phẩm
+        </a>
+        <a href="bai-viet.html" class="mobile-nav-link p-3 rounded-lg hover:bg-slate-800 flex items-center gap-3 text-slate-200">
+          <i class="fa-solid fa-newspaper w-5 text-amber-500"></i> Tin Tức & Bài Viết
+        </a>
+        <a href="gioi-thieu.html" class="mobile-nav-link p-3 rounded-lg hover:bg-slate-800 flex items-center gap-3 text-slate-200">
+          <i class="fa-solid fa-circle-info w-5 text-amber-500"></i> Về Harmonia
+        </a>
+        <a href="lien-he.html" class="mobile-nav-link p-3 rounded-lg hover:bg-slate-800 flex items-center gap-3 text-slate-200">
+          <i class="fa-solid fa-headset w-5 text-amber-500"></i> Liên Hệ Showroom
+        </a>
+      </nav>
+    </div>
+
+    <div class="p-4 border-t border-slate-800 space-y-2">
+      <a href="dang-nhap.html" class="w-full block text-center py-2.5 rounded-lg border border-slate-700 font-semibold text-slate-200 hover:bg-slate-800 transition">
+        Đăng Nhập
+      </a>
+      <a href="dang-ky.html" class="w-full block text-center py-2.5 rounded-lg bg-amber-600 font-semibold text-white hover:bg-amber-500 transition shadow-lg shadow-amber-600/30">
+        Đăng Ký Tài Khoản
+      </a>
+      <a href="admin/index.html" class="w-full block text-center py-2 text-xs font-semibold text-amber-400 hover:underline">
+        <i class="fa-solid fa-lock mr-1"></i> Trang Quản Trị (Admin)
+      </a>
+    </div>
+  </div>
+
+  <!-- HERO BANNER SLIDER SECTION -->
+  <section class="relative bg-slate-950 text-white overflow-hidden py-16 lg:py-24">
+    <!-- Ambient Background Glow -->
+    <div class="absolute -top-40 -left-40 w-96 h-96 bg-amber-600/20 rounded-full filter blur-3xl"></div>
+    <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-amber-500/10 rounded-full filter blur-3xl"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider">
+            <i class="fa-solid fa-sparkles"></i> Bộ Sưu Tập 2026 Mới Nhất
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+            Khơi Nguồn Cảm Tác <br class="hidden sm:inline">
+            <span class="bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500 bg-clip-text text-transparent">Âm Nhạc Đỉnh Cao</span>
+          </h1>
+          <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Khám phá hơn 1.500+ mẫu nhạc cụ chính hãng từ các thương hiệu trứ danh Fender, Yamaha, Steinway & Sons, Roland. Bảo hành chính hãng lên tới 5 năm.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <a href="san-pham.html" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-slate-950 font-extrabold shadow-xl shadow-amber-500/25 transition transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+              <span>Xem Sản Phẩm</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="lien-he.html" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-700 border border-slate-700 text-white font-semibold transition flex items-center justify-center gap-3">
+              <i class="fa-solid fa-store text-amber-400"></i>
+              <span>Thử Nhạc Cụ Tại Store</span>
+            </a>
+          </div>
+
+          <!-- Quick Stats -->
+          <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-800/80 text-center lg:text-left">
+            <div>
+              <span class="block text-2xl sm:text-3xl font-extrabold text-amber-400 font-heading">100%</span>
+              <span class="text-xs text-slate-400 uppercase tracking-wider">Chính Hãng</span>
+            </div>
+            <div>
+              <span class="block text-2xl sm:text-3xl font-extrabold text-amber-400 font-heading">15+</span>
+              <span class="text-xs text-slate-400 uppercase tracking-wider">Năm Kinh Nghiệm</span>
+            </div>
+            <div>
+              <span class="block text-2xl sm:text-3xl font-extrabold text-amber-400 font-heading">50.000+</span>
+              <span class="text-xs text-slate-400 uppercase tracking-wider">Khách Hàng Hài Lòng</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Image Highlight -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <div class="absolute inset-0 bg-gradient-to-tr from-amber-500/30 to-amber-600/0 rounded-3xl transform rotate-3 scale-105 blur-lg"></div>
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop" alt="Guitar Premium" class="relative rounded-3xl shadow-2xl border border-slate-800 object-cover w-full h-[420px] lg:h-[480px]">
+            
+            <!-- Floating Badge -->
+            <div class="absolute -bottom-6 -left-6 glass-card-dark p-4 shadow-2xl border border-amber-500/30 hidden sm:flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400">Đại Lý Ủy Quyền</p>
+                <p class="font-bold text-sm text-white">Yamaha & Fender Global</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES SECTION -->
+  <section class="py-16 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-amber-600 font-semibold text-sm uppercase tracking-wider">Danh Mục Sản Phẩm</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Khám Phá Theo Nhạc Cụ</h2>
+        </div>
+        <a href="san-pham.html" class="inline-flex items-center gap-2 text-sm font-bold text-amber-600 hover:text-amber-700">
+          <span>Xem tất cả danh mục</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
+        
+        <!-- Category Card 1: Guitar -->
+        <a href="san-pham.html?category=guitar" class="group bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 rounded-2xl p-6 text-center transition duration-300 shadow-sm hover:shadow-md">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-amber-500/10 text-amber-600 flex items-center justify-center text-3xl group-hover:scale-110 transition duration-300">
+            <i class="fa-solid fa-guitar"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition">Đàn Guitar</h3>
+          <p class="text-xs text-slate-500 mt-1">Guitar Điện, Acoustic</p>
+        </a>
+
+        <!-- Category Card 2: Piano -->
+        <a href="san-pham.html?category=piano" class="group bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 rounded-2xl p-6 text-center transition duration-300 shadow-sm hover:shadow-md">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-amber-500/10 text-amber-600 flex items-center justify-center text-3xl group-hover:scale-110 transition duration-300">
+            <i class="fa-solid fa-keyboard"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition">Đàn Piano</h3>
+          <p class="text-xs text-slate-500 mt-1">Grand Piano, Điện</p>
+        </a>
+
+        <!-- Category Card 3: Drums -->
+        <a href="san-pham.html?category=drum" class="group bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 rounded-2xl p-6 text-center transition duration-300 shadow-sm hover:shadow-md">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-amber-500/10 text-amber-600 flex items-center justify-center text-3xl group-hover:scale-110 transition duration-300">
+            <i class="fa-solid fa-drum"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition">Bộ Trống</h3>
+          <p class="text-xs text-slate-500 mt-1">Trống Cơ, Trống Điện</p>
+        </a>
+
+        <!-- Category Card 4: Saxophone & Winds -->
+        <a href="san-pham.html?category=wind" class="group bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 rounded-2xl p-6 text-center transition duration-300 shadow-sm hover:shadow-md">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-amber-500/10 text-amber-600 flex items-center justify-center text-3xl group-hover:scale-110 transition duration-300">
+            <i class="fa-solid fa-wind"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition">Kèn & Đóng</h3>
+          <p class="text-xs text-slate-500 mt-1">Saxophone, Flute</p>
+        </a>
+
+        <!-- Category Card 5: String/Violin -->
+        <a href="san-pham.html?category=violin" class="group bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 rounded-2xl p-6 text-center transition duration-300 shadow-sm hover:shadow-md">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-amber-500/10 text-amber-600 flex items-center justify-center text-3xl group-hover:scale-110 transition duration-300">
+            <i class="fa-solid fa-lines-leaning"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition">Đàn Violin</h3>
+          <p class="text-xs text-slate-500 mt-1">Violin, Cello</p>
+        </a>
+
+        <!-- Category Card 6: Accessories -->
+        <a href="san-pham.html?category=acc" class="group bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 rounded-2xl p-6 text-center transition duration-300 shadow-sm hover:shadow-md">
+          <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-amber-500/10 text-amber-600 flex items-center justify-center text-3xl group-hover:scale-110 transition duration-300">
+            <i class="fa-solid fa-sliders"></i>
+          </div>
+          <h3 class="font-bold text-slate-900 text-base group-hover:text-amber-600 transition">Phụ Kiện</h3>
+          <p class="text-xs text-slate-500 mt-1">Amply, Dây Đàn, Bao</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS SECTION -->
+  <section class="py-16 bg-slate-100/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-amber-600 font-semibold text-sm uppercase tracking-wider">Sản Phẩm Nổi Bật</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Bán Chạy Nhất Tại Showroom</h2>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap gap-2 text-sm font-semibold">
+          <button class="px-4 py-2 rounded-full bg-amber-600 text-white shadow-sm">Tất Cả</button>
+          <button class="px-4 py-2 rounded-full bg-white text-slate-600 hover:bg-slate-200 transition">Guitar</button>
+          <button class="px-4 py-2 rounded-full bg-white text-slate-600 hover:bg-slate-200 transition">Piano</button>
+          <button class="px-4 py-2 rounded-full bg-white text-slate-600 hover:bg-slate-200 transition">Saxophone</button>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        
+        <!-- Product Card 1 -->
+        <div class="product-card bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between shadow-sm relative group">
+          <span class="absolute top-3 left-3 bg-red-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-full z-10">-15%</span>
+          
+          <div class="relative overflow-hidden bg-slate-100 h-60 flex items-center justify-center p-4">
+            <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=600&auto=format&fit=crop" alt="Guitar Fender Stratocaster" class="img-zoom object-cover w-full h-full rounded-lg">
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-3">
+              <a href="chi-tiet-san-pham.html" class="w-10 h-10 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-amber-500 hover:text-white transition shadow-md" title="Xem nhanh">
+                <i class="fa-regular fa-eye"></i>
+              </a>
+              <button onclick="addToCart({id: 101, name: 'Fender Player Stratocaster Electric Guitar', price: 18500000, image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=600&auto=format&fit=crop'})" class="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center hover:bg-amber-500 transition shadow-md" title="Thêm vào giỏ">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="p-5 flex flex-col flex-1 justify-between">
+            <div>
+              <span class="text-xs text-amber-600 font-semibold uppercase tracking-wider">Guitar Điện</span>
+              <h3 class="font-bold text-slate-900 text-base mt-1 line-clamp-2 hover:text-amber-600 transition">
+                <a href="chi-tiet-san-pham.html">Fender Player Stratocaster Maple Fingerboard</a>
+              </h3>
+              
+              <div class="flex items-center gap-1 text-amber-400 text-xs mt-2">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <span class="text-slate-500 ml-1">(42 đánh giá)</span>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="block text-xs text-slate-400 line-through">21.800.000đ</span>
+                <span class="text-lg font-extrabold text-amber-600 font-heading">18.500.000đ</span>
+              </div>
+              <button onclick="addToCart({id: 101, name: 'Fender Player Stratocaster', price: 18500000, image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=600&auto=format&fit=crop'})" class="px-3 py-2 rounded-lg bg-slate-900 hover:bg-amber-600 text-white text-xs font-bold transition">
+                + Giỏ hàng
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="product-card bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between shadow-sm relative group">
+          <span class="absolute top-3 left-3 bg-amber-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-full z-10">Bán chạy</span>
+
+          <div class="relative overflow-hidden bg-slate-100 h-60 flex items-center justify-center p-4">
+            <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=600&auto=format&fit=crop" alt="Piano Yamaha P-125" class="img-zoom object-cover w-full h-full rounded-lg">
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-3">
+              <a href="chi-tiet-san-pham.html" class="w-10 h-10 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-amber-500 hover:text-white transition shadow-md">
+                <i class="fa-regular fa-eye"></i>
+              </a>
+              <button onclick="addToCart({id: 102, name: 'Đàn Piano Điện Yamaha P-125B', price: 16900000, image: 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=600&auto=format&fit=crop'})" class="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center hover:bg-amber-500 transition shadow-md">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="p-5 flex flex-col flex-1 justify-between">
+            <div>
+              <span class="text-xs text-amber-600 font-semibold uppercase tracking-wider">Piano Điện</span>
+              <h3 class="font-bold text-slate-900 text-base mt-1 line-clamp-2 hover:text-amber-600 transition">
+                <a href="chi-tiet-san-pham.html">Đàn Piano Điện Yamaha P-125B (88 phím nặng)</a>
+              </h3>
+              
+              <div class="flex items-center gap-1 text-amber-400 text-xs mt-2">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span class="text-slate-500 ml-1">(58 đánh giá)</span>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-lg font-extrabold text-amber-600 font-heading">16.900.000đ</span>
+              </div>
+              <button onclick="addToCart({id: 102, name: 'Piano Điện Yamaha P-125B', price: 16900000, image: 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=600&auto=format&fit=crop'})" class="px-3 py-2 rounded-lg bg-slate-900 hover:bg-amber-600 text-white text-xs font-bold transition">
+                + Giỏ hàng
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="product-card bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between shadow-sm relative group">
+          <div class="relative overflow-hidden bg-slate-100 h-60 flex items-center justify-center p-4">
+            <img src="https://images.unsplash.com/photo-1525994886773-080587e161c2?q=80&w=600&auto=format&fit=crop" alt="Saxophone Yamaha YAS-280" class="img-zoom object-cover w-full h-full rounded-lg">
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-3">
+              <a href="chi-tiet-san-pham.html" class="w-10 h-10 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-amber-500 hover:text-white transition shadow-md">
+                <i class="fa-regular fa-eye"></i>
+              </a>
+              <button onclick="addToCart({id: 103, name: 'Kèn Saxophone Alto Yamaha YAS-280', price: 29500000, image: 'https://images.unsplash.com/photo-1525994886773-080587e161c2?q=80&w=600&auto=format&fit=crop'})" class="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center hover:bg-amber-500 transition shadow-md">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="p-5 flex flex-col flex-1 justify-between">
+            <div>
+              <span class="text-xs text-amber-600 font-semibold uppercase tracking-wider">Kèn Saxophone</span>
+              <h3 class="font-bold text-slate-900 text-base mt-1 line-clamp-2 hover:text-amber-600 transition">
+                <a href="chi-tiet-san-pham.html">Kèn Saxophone Alto Yamaha YAS-280 Cao Cấp</a>
+              </h3>
+              
+              <div class="flex items-center gap-1 text-amber-400 text-xs mt-2">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span class="text-slate-500 ml-1">(19 đánh giá)</span>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-lg font-extrabold text-amber-600 font-heading">29.500.000đ</span>
+              </div>
+              <button onclick="addToCart({id: 103, name: 'Saxophone Yamaha YAS-280', price: 29500000, image: 'https://images.unsplash.com/photo-1525994886773-080587e161c2?q=80&w=600&auto=format&fit=crop'})" class="px-3 py-2 rounded-lg bg-slate-900 hover:bg-amber-600 text-white text-xs font-bold transition">
+                + Giỏ hàng
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="product-card bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between shadow-sm relative group">
+          <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-full z-10">Mới về</span>
+
+          <div class="relative overflow-hidden bg-slate-100 h-60 flex items-center justify-center p-4">
+            <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=600&auto=format&fit=crop" alt="Trống Điện Roland TD-17KVX" class="img-zoom object-cover w-full h-full rounded-lg">
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-3">
+              <a href="chi-tiet-san-pham.html" class="w-10 h-10 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-amber-500 hover:text-white transition shadow-md">
+                <i class="fa-regular fa-eye"></i>
+              </a>
+              <button onclick="addToCart({id: 104, name: 'Bộ Trống Điện Roland TD-17KVX2', price: 42000000, image: 'https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=600&auto=format&fit=crop'})" class="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center hover:bg-amber-500 transition shadow-md">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="p-5 flex flex-col flex-1 justify-between">
+            <div>
+              <span class="text-xs text-amber-600 font-semibold uppercase tracking-wider">Trống Điện</span>
+              <h3 class="font-bold text-slate-900 text-base mt-1 line-clamp-2 hover:text-amber-600 transition">
+                <a href="chi-tiet-san-pham.html">Bộ Trống Điện Roland V-Drums TD-17KVX2</a>
+              </h3>
+              
+              <div class="flex items-center gap-1 text-amber-400 text-xs mt-2">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span class="text-slate-500 ml-1">(27 đánh giá)</span>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div>
+                <span class="text-lg font-extrabold text-amber-600 font-heading">42.000.000đ</span>
+              </div>
+              <button onclick="addToCart({id: 104, name: 'Trống Điện Roland TD-17KVX2', price: 42000000, image: 'https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=600&auto=format&fit=crop'})" class="px-3 py-2 rounded-lg bg-slate-900 hover:bg-amber-600 text-white text-xs font-bold transition">
+                + Giỏ hàng
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US / FEATURES -->
+  <section class="py-16 bg-white border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+        
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center text-2xl">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h4 class="font-bold text-slate-900 text-lg mb-1">100% Chính Hãng</h4>
+          <p class="text-xs text-slate-500">Cam kết đền tiền x10 nếu phát hiện hàng giả, hàng nhái</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center text-2xl">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <h4 class="font-bold text-slate-900 text-lg mb-1">Miễn Phí Giao Hàng</h4>
+          <p class="text-xs text-slate-500">Miễn phí vận chuyển toàn quốc cho đơn hàng từ 2 triệu</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center text-2xl">
+            <i class="fa-solid fa-wrench"></i>
+          </div>
+          <h4 class="font-bold text-slate-900 text-lg mb-1">Bảo Hành Lên 5 Năm</h4>
+          <p class="text-xs text-slate-500">Chế độ bảo trì định kỳ & bảo hành chính hãng lâu dài</p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100">
+          <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center text-2xl">
+            <i class="fa-solid fa-arrows-rotate"></i>
+          </div>
+          <h4 class="font-bold text-slate-900 text-lg mb-1">Đổi Trả 30 Ngày</h4>
+          <p class="text-xs text-slate-500">Đổi mới trong 30 ngày nếu có lỗi kỹ thuật từ nhà sản xuất</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST ARTICLES / BLOG PREVIEW -->
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="text-amber-600 font-semibold text-sm uppercase tracking-wider">Góc Kiến Thức</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Bài Viết & Hướng Dẫn Mới Nhất</h2>
+        </div>
+        <a href="bai-viet.html" class="inline-flex items-center gap-2 text-sm font-bold text-amber-600 hover:text-amber-700">
+          <span>Xem tất cả bài viết</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Post 1 -->
+        <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+          <a href="chi-tiet-bai-viet.html" class="block overflow-hidden h-48">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=600&auto=format&fit=crop" alt="Hướng dẫn chọn mua guitar" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+          </a>
+          <div class="p-6">
+            <span class="text-xs text-amber-600 font-semibold">Tư Vấn Chọn Mua</span>
+            <h3 class="font-bold text-slate-900 text-lg mt-2 hover:text-amber-600 transition line-clamp-2">
+              <a href="chi-tiet-bai-viet.html">Top 5 Cây Đàn Guitar Acoustic Tốt Nhất Cho Người Mới Bắt Đầu 2026</a>
+            </h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">
+              Tìm hiểu tiêu chí lựa chọn dáng đàn, gỗ làm đàn và ngân sách phù hợp cho hành trình âm nhạc đầu tiên.
+            </p>
+            <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+              <span><i class="fa-regular fa-calendar mr-1"></i> 28/08/2026</span>
+              <span><i class="fa-regular fa-user mr-1"></i> Nhạc Sĩ Minh Triết</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+          <a href="chi-tiet-bai-viet.html" class="block overflow-hidden h-48">
+            <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=600&auto=format&fit=crop" alt="Bảo quản đàn piano" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+          </a>
+          <div class="p-6">
+            <span class="text-xs text-amber-600 font-semibold">Kỹ Thuật & Bảo Trị</span>
+            <h3 class="font-bold text-slate-900 text-lg mt-2 hover:text-amber-600 transition line-clamp-2">
+              <a href="chi-tiet-bai-viet.html">Bí Quyết Bảo Quản Đàn Piano Cơ Luôn Giữ Được Âm Thanh Chuẩn Xác</a>
+            </h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">
+              Độ ẩm và nhiệt độ ảnh hưởng trực tiếp đến bảng cộng hưởng gỗ. Cùng chuyên gia kiểm tra đúng cách.
+            </p>
+            <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+              <span><i class="fa-regular fa-calendar mr-1"></i> 25/08/2026</span>
+              <span><i class="fa-regular fa-user mr-1"></i> Chuyên Gia Kỹ Thuật</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+          <a href="chi-tiet-bai-viet.html" class="block overflow-hidden h-48">
+            <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=600&auto=format&fit=crop" alt="Trống điện vs Trống cơ" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+          </a>
+          <div class="p-6">
+            <span class="text-xs text-amber-600 font-semibold">So Sánh Nhạc Cụ</span>
+            <h3 class="font-bold text-slate-900 text-lg mt-2 hover:text-amber-600 transition line-clamp-2">
+              <a href="chi-tiet-bai-viet.html">So Sánh Chi Tiết Trống Điện Tử Và Trống Cơ Cho Căn Hộ Chung Cư</a>
+            </h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">
+              Nên chọn dòng trống nào để không làm ảnh hưởng hàng xóm mà vẫn mang lại cảm giác đánh chân thực nhất?
+            </p>
+            <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+              <span><i class="fa-regular fa-calendar mr-1"></i> 20/08/2026</span>
+              <span><i class="fa-regular fa-user mr-1"></i> Ban Biên Tập</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-300 pt-16 pb-8 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center text-slate-950 font-bold text-xl">
+              <i class="fa-solid fa-music"></i>
+            </div>
+            <span class="font-heading font-extrabold text-2xl text-white tracking-wider">HARMONIA</span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+            Harmonia Music - Hệ thống phân phối nhạc cụ cao cấp chính hãng hàng đầu Việt Nam. Nơi thăng hoa cảm xúc nghệ thuật của bạn.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center transition">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center transition">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center transition">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center transition">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links 1 -->
+        <div>
+          <h4 class="text-white font-bold text-base mb-4 font-heading">Danh Mục Nhạc Cụ</h4>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="san-pham.html" class="hover:text-amber-400 transition">Đàn Guitar</a></li>
+            <li><a href="san-pham.html" class="hover:text-amber-400 transition">Đàn Piano Điện & Cơ</a></li>
+            <li><a href="san-pham.html" class="hover:text-amber-400 transition">Bộ Trống Cơ & Điện</a></li>
+            <li><a href="san-pham.html" class="hover:text-amber-400 transition">Kèn Saxophone & Flute</a></li>
+            <li><a href="san-pham.html" class="hover:text-amber-400 transition">Đàn Violin & Cello</a></li>
+          </ul>
+        </div>
+
+        <!-- Links 2 -->
+        <div>
+          <h4 class="text-white font-bold text-base mb-4 font-heading">Hỗ Trợ Khách Hàng</h4>
+          <ul class="space-y-2 text-sm text-slate-400">
+            <li><a href="gioi-thieu.html" class="hover:text-amber-400 transition">Về Chúng Tôi</a></li>
+            <li><a href="lien-he.html" class="hover:text-amber-400 transition">Hướng Dẫn Mua Hàng</a></li>
+            <li><a href="lien-he.html" class="hover:text-amber-400 transition">Chính Sách Bảo Hành</a></li>
+            <li><a href="lien-he.html" class="hover:text-amber-400 transition">Chính Sách Đổi Trả</a></li>
+            <li><a href="lien-he.html" class="hover:text-amber-400 transition">Hình Thức Thanh Toán</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-white font-bold text-base mb-4 font-heading">Showroom</h4>
+          <ul class="space-y-3 text-sm text-slate-400">
+            <li class="flex items-start gap-2">
+              <i class="fa-solid fa-location-dot text-amber-500 mt-1"></i>
+              <span>123 Lý Thường Kiệt, P.7, Q.10, TP. Hồ Chí Minh</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-amber-500"></i>
+              <span>1900 6868 - 0909 123 456</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-amber-500"></i>
+              <span>contact@harmonia.vn</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>© 2026 Harmonia Music Store. Tất cả quyền được bảo lưu.</p>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-slate-400">Điều khoản sử dụng</a>
+          <a href="#" class="hover:text-slate-400">Chính sách bảo mật</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

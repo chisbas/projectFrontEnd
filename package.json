@@ -1,0 +1,27 @@
+{
+  "name": "nenthem",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "server": "json-server db.json -p 3001",
+    "db": "json-server db.json -p 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "next": "16.3.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.3",
+    "json-server": "^1.0.0-beta.15",
+    "lightningcss-win32-x64-msvc": "^1.33.0",
+    "tailwindcss": "^4"
+  }
+}

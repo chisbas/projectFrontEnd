@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thêm Sản Phẩm Mới - Admin Harmonia</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amber: { 50: '#fffbeb', 100: '#fef3c7', 500: '#f59e0b', 600: '#d97706', 700: '#b45309' },
+            dark: { 900: '#0b0f19', 800: '#0f172a', 700: '#1e293b' }
+          },
+          fontFamily: { heading: ['Outfit', 'sans-serif'], sans: ['Plus Jakarta Sans', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col md:flex-row">
+
+  <!-- ADMIN SIDEBAR -->
+  <aside class="w-full md:w-64 bg-slate-950 border-r border-slate-800 p-6 flex flex-col justify-between flex-shrink-0">
+    <div class="space-y-8">
+      <a href="../index.html" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-amber-500 flex items-center justify-center text-slate-950 font-bold text-lg">
+          <i class="fa-solid fa-music"></i>
+        </div>
+        <div>
+          <span class="font-heading font-extrabold text-xl tracking-wider text-white block leading-none">HARMONIA</span>
+          <span class="text-[9px] uppercase tracking-widest text-amber-400 font-bold">Admin Control</span>
+        </div>
+      </a>
+
+      <nav class="space-y-1 text-sm font-medium text-slate-400">
+        <a href="index.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-900 hover:text-white transition">
+          <i class="fa-solid fa-chart-pie w-5 text-amber-500"></i> Tổng Quan (Dashboard)
+        </a>
+        <a href="danh-sach-san-pham.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-900 hover:text-white transition">
+          <i class="fa-solid fa-box w-5 text-amber-500"></i> Danh Sách Sản Phẩm
+        </a>
+        <a href="them-san-pham.html" class="flex items-center gap-3 p-3 rounded-xl bg-amber-500/10 text-amber-400 font-semibold border border-amber-500/20">
+          <i class="fa-solid fa-plus w-5"></i> Thêm Sản Phẩm Mới
+        </a>
+        <a href="danh-sach-danh-muc.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-900 hover:text-white transition">
+          <i class="fa-solid fa-folder-tree w-5 text-amber-500"></i> Danh Sách Danh Mục
+        </a>
+        <a href="them-danh-muc.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-900 hover:text-white transition">
+          <i class="fa-solid fa-folder-plus w-5 text-amber-500"></i> Thêm Danh Mục Mới
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- MAIN AREA -->
+  <div class="flex-1 flex flex-col min-w-0">
+    
+    <header class="h-20 bg-slate-950 border-b border-slate-800 px-6 flex items-center justify-between">
+      <h1 class="text-xl font-bold text-white font-heading">Thêm Nhạc Cụ Mới VÀO Kho</h1>
+      <a href="danh-sach-san-pham.html" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-xs font-bold transition">
+        <i class="fa-solid fa-arrow-left mr-1"></i> Trở về danh sách
+      </a>
+    </header>
+
+    <main class="p-6 sm:p-8 flex-1 overflow-y-auto max-w-5xl">
+      
+      <form onsubmit="event.preventDefault(); showToast('Đã lưu sản phẩm mới thành công!'); setTimeout(() => window.location.href='danh-sach-san-pham.html', 1500);" class="bg-slate-800/80 rounded-3xl p-6 sm:p-8 border border-slate-700 space-y-6">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Tên Nhạc Cụ *</label>
+            <input type="text" required placeholder="Ví dụ: Đàn Guitar Fender Player Stratocaster" class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-amber-500">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Mã SKU *</label>
+            <input type="text" required placeholder="FEN-STRAT-001" class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-amber-500">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Danh Mục Nhạc Cụ *</label>
+            <select class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-amber-500 font-medium">
+              <option>Đàn Guitar</option>
+              <option>Đàn Piano</option>
+              <option>Bộ Trống</option>
+              <option>Kèn & Sáo</option>
+              <option>Đàn Violin</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Thương Hiệu *</label>
+            <select class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-amber-500 font-medium">
+              <option>Fender</option>
+              <option>Yamaha</option>
+              <option>Roland</option>
+              <option>Taylor</option>
+              <option>Gibson</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Số Lượng Nhập Kho *</label>
+            <input type="number" min="1" value="10" required class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-amber-500">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Giá Niêm Yết (VNĐ) *</label>
+            <input type="number" required placeholder="21800000" class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-amber-500">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Giá Khuyến Mãi (VNĐ)</label>
+            <input type="number" placeholder="18500000" class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-amber-500">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Hình Ảnh Sản Phẩm *</label>
+          <div class="border-2 border-dashed border-slate-700 bg-slate-900 rounded-2xl p-6 text-center space-y-2">
+            <i class="fa-solid fa-cloud-arrow-up text-3xl text-amber-500"></i>
+            <p class="text-xs text-slate-400">Kéo thả hình ảnh sản phẩm vào đây hoặc nhấp để chọn tệp</p>
+            <input type="file" multiple class="hidden" id="img-upload">
+            <button type="button" onclick="document.getElementById('img-upload').click()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-bold">Chọn Hình Ảnh</button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-300 uppercase mb-1">Mô Tả Chi Tiết *</label>
+          <textarea rows="4" required placeholder="Nhập mô tả sản phẩm, chất liệu gỗ, pickup..." class="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-amber-500"></textarea>
+        </div>
+
+        <div class="flex items-center gap-4 pt-4 border-t border-slate-700">
+          <button type="submit" class="px-6 py-3.5 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-sm font-extrabold shadow-lg shadow-amber-600/30 transition">
+            <i class="fa-solid fa-check mr-2"></i> LƯU SẢN PHẨM
+          </button>
+          <a href="danh-sach-san-pham.html" class="px-6 py-3.5 bg-slate-700 hover:bg-slate-600 text-white rounded-xl text-sm font-bold transition">
+            Hủy Bỏ
+          </a>
+        </div>
+
+      </form>
+
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

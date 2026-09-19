@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh Sách Nhạc Cụ - Harmonia Music</title>
+  <meta name="description" content="Khám phá bộ sưu tập đàn Guitar, Piano, Saxophone, Trống chính hãng giá tốt tại Harmonia Music.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            blue: { 50: '#eff6ff', 100: '#dbeafe', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af', 900: '#1e3a8a' },
+            amber: { 500: '#f59e0b', 600: '#d97706' },
+            slate: { 900: '#0f172a', 800: '#1e293b', 700: '#334155' }
+          },
+          fontFamily: { heading: ['Outfit', 'sans-serif'], sans: ['Plus Jakarta Sans', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+  <!-- TOP ANNOUNCEMENT -->
+  <div class="bg-blue-900 text-blue-100 text-xs py-2 px-4 border-b border-blue-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-4">
+        <span><i class="fa-solid fa-phone text-amber-400 mr-1"></i> Hotline: 1900 6868</span>
+        <span class="hidden md:inline"><i class="fa-solid fa-location-dot text-amber-400 mr-1"></i> 123 Lý Thường Kiệt, Q.10, TP.HCM</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="gioi-thieu.html" class="hover:text-amber-300 transition">Về Chúng Tôi</a>
+        <span>|</span>
+        <a href="lien-he.html" class="hover:text-amber-300 transition">Showroom</a>
+        <span>|</span>
+        <a href="dang-nhap.html" class="hover:text-amber-300 transition"><i class="fa-regular fa-user mr-1"></i> Tài khoản</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER NAV -->
+  <header class="sticky top-0 z-50 glass-nav shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 to-blue-500 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-blue-500/20">
+            <i class="fa-solid fa-music"></i>
+          </div>
+          <div>
+            <span class="font-heading font-extrabold text-2xl tracking-tight text-slate-900 block leading-none">HARMONIA</span>
+            <span class="text-[10px] tracking-widest uppercase text-blue-600 font-bold">Premium Instruments</span>
+          </div>
+        </a>
+
+        <div class="hidden md:flex flex-1 max-w-md mx-8 relative">
+          <input type="text" placeholder="Tìm kiếm nhạc cụ..." class="w-full bg-slate-100 text-slate-800 placeholder-slate-400 text-sm rounded-full pl-5 pr-12 py-2.5 border border-slate-200 focus:outline-none focus:border-blue-600 transition">
+          <button class="absolute right-1 top-1/2 -translate-y-1/2 w-9 h-9 bg-blue-700 hover:bg-blue-600 text-white rounded-full flex items-center justify-center transition shadow-md">
+            <i class="fa-solid fa-magnifying-glass text-sm"></i>
+          </button>
+        </div>
+
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-700">
+          <a href="index.html" class="hover:text-blue-700 transition">Trang Chủ</a>
+          <a href="san-pham.html" class="text-blue-700 font-bold">Sản Phẩm</a>
+          <a href="bai-viet.html" class="hover:text-blue-700 transition">Tin Tức</a>
+          <a href="gioi-thieu.html" class="hover:text-blue-700 transition">Giới Thiệu</a>
+          <a href="lien-he.html" class="hover:text-blue-700 transition">Liên Hệ</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="dang-nhap.html" class="hidden sm:flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 text-blue-700 hover:bg-blue-100 transition border border-blue-100">
+            <i class="fa-regular fa-user text-base"></i>
+          </a>
+          <a href="gio-hang.html" class="relative flex items-center justify-center w-10 h-10 rounded-full bg-blue-50 text-blue-700 hover:bg-blue-100 transition border border-blue-100">
+            <i class="fa-solid fa-cart-shopping text-base"></i>
+            <span class="cart-badge-count absolute -top-1 -right-1 bg-amber-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+          </a>
+          <button id="mobile-menu-btn" class="lg:hidden w-10 h-10 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center hover:bg-slate-200 transition">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB & PAGE HEADER -->
+  <div class="bg-blue-900 text-white py-8 border-b border-blue-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h1 class="text-2xl sm:text-3xl font-extrabold font-heading">Tất Cả Sản Phẩm Nhạc Cụ</h1>
+          <p class="text-xs sm:text-sm text-blue-200 mt-1">Danh mục nhạc cụ nhập khẩu chính hãng bảo hành lên tới 5 năm</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs text-blue-200">
+          <a href="index.html" class="hover:text-white">Trang Chủ</a>
+          <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          <span class="text-amber-400 font-bold">Sản Phẩm</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CATALOG CONTENT -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      
+      <!-- SIDEBAR FILTER -->
+      <aside class="hidden lg:block space-y-6">
+        
+        <!-- Category Filter -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+          <h3 class="font-bold text-slate-900 text-lg mb-4 pb-2 border-b border-slate-100 flex items-center gap-2 font-heading">
+            <i class="fa-solid fa-list text-blue-700 text-sm"></i> Danh Mục Nhạc Cụ
+          </h3>
+          <ul class="space-y-2 text-sm font-medium text-slate-600">
+            <li>
+              <a href="#" class="flex items-center justify-between p-2.5 rounded-xl bg-blue-50 text-blue-700 font-bold">
+                <span><i class="fa-solid fa-circle-dot mr-2 text-xs"></i> Tất Cả Nhạc Cụ</span>
+                <span class="text-xs bg-blue-200 text-blue-800 px-2 py-0.5 rounded-full font-bold">128</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/60 hover:text-blue-700 transition">
+                <span><i class="fa-solid fa-guitar mr-2 text-xs text-slate-400"></i> Đàn Guitar</span>
+                <span class="text-xs text-slate-400">45</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/60 hover:text-blue-700 transition">
+                <span><i class="fa-solid fa-keyboard mr-2 text-xs text-slate-400"></i> Đàn Piano</span>
+                <span class="text-xs text-slate-400">32</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/60 hover:text-blue-700 transition">
+                <span><i class="fa-solid fa-drum mr-2 text-xs text-slate-400"></i> Bộ Trống</span>
+                <span class="text-xs text-slate-400">18</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/60 hover:text-blue-700 transition">
+                <span><i class="fa-solid fa-wind mr-2 text-xs text-slate-400"></i> Kèn & Flute</span>
+                <span class="text-xs text-slate-400">14</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-blue-50/60 hover:text-blue-700 transition">
+                <span><i class="fa-solid fa-lines-leaning mr-2 text-xs text-slate-400"></i> Violin & Cello</span>
+                <span class="text-xs text-slate-400">19</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Brand Filter -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+          <h3 class="font-bold text-slate-900 text-lg mb-4 pb-2 border-b border-slate-100 flex items-center gap-2 font-heading">
+            <i class="fa-solid fa-copyright text-blue-700 text-sm"></i> Thương Hiệu
+          </h3>
+          <div class="space-y-2 text-sm text-slate-600">
+            <label class="flex items-center gap-3 cursor-pointer hover:text-blue-700">
+              <input type="checkbox" checked class="rounded text-blue-600 focus:ring-blue-500 w-4 h-4">
+              <span>Yamaha (42)</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer hover:text-blue-700">
+              <input type="checkbox" class="rounded text-blue-600 focus:ring-blue-500 w-4 h-4">
+              <span>Fender (28)</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer hover:text-blue-700">
+              <input type="checkbox" class="rounded text-blue-600 focus:ring-blue-500 w-4 h-4">
+              <span>Roland (20)</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer hover:text-blue-700">
+              <input type="checkbox" class="rounded text-blue-600 focus:ring-blue-500 w-4 h-4">
+              <span>Gibson (15)</span>
+            </label>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- PRODUCT LIST AREA -->
+      <div class="lg:col-span-3 space-y-6">
+        
+        <!-- Filter Top Bar -->
+        <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="text-xs sm:text-sm text-slate-500">
+            Hiển thị <span class="font-bold text-slate-900">1 - 6</span> trong số <span class="font-bold text-slate-900">128</span> sản phẩm
+          </div>
+
+          <div class="flex items-center gap-4 w-full sm:w-auto justify-between sm:justify-end">
+            <div class="flex items-center gap-2">
+              <label class="text-xs text-slate-500 whitespace-nowrap">Sắp xếp:</label>
+              <select class="bg-slate-50 border border-slate-200 text-slate-800 text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-blue-600 font-medium">
+                <option>Mới nhất</option>
+                <option>Giá: Thấp đến Cao</option>
+                <option>Giá: Cao đến Thấp</option>
+                <option>Bán chạy nhất</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+          
+          <!-- Item 1 -->
+          <div class="product-card bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between shadow-sm relative group">
+            <span class="absolute top-3 left-3 bg-red-500 text-white text-[11px] font-bold px-2.5 py-1 rounded-full z-10">-15%</span>
+            <div class="relative overflow-hidden bg-slate-100 h-56 flex items-center justify-center p-4">
+              <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=600&auto=format&fit=crop" alt="Guitar Fender" class="img-zoom object-cover w-full h-full rounded-lg">
+              <div class="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-3">
+                <a href="chi-tiet-san-pham.html" class="w-9 h-9 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-blue-700 hover:text-white transition shadow-md">
+                  <i class="fa-regular fa-eye"></i>
+                </a>
+                <button onclick="addToCart({id: 101, name: 'Fender Player Stratocaster', price: 18500000, image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=600&auto=format&fit=crop'})" class="w-9 h-9 rounded-full bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 transition shadow-md">
+                  <i class="fa-solid fa-cart-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-5 flex flex-col flex-1 justify-between">
+              <div>
+                <span class="text-xs text-blue-700 font-bold uppercase">Guitar Điện</span>
+                <h3 class="font-bold text-slate-900 text-base mt-1 line-clamp-2 hover:text-blue-700">
+                  <a href="chi-tiet-san-pham.html">Fender Player Stratocaster Maple Fingerboard</a>
+                </h3>
+              </div>
+              <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div>
+                  <span class="block text-xs text-slate-400 line-through">21.800.000đ</span>
+                  <span class="text-base font-extrabold text-blue-700 font-heading">18.500.000đ</span>
+                </div>
+                <button onclick="addToCart({id: 101, name: 'Fender Player Stratocaster', price: 18500000, image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=600&auto=format&fit=crop'})" class="px-3 py-1.5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold transition shadow-sm">+ Giỏ</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="product-card bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between shadow-sm relative group">
+            <div class="relative overflow-hidden bg-slate-100 h-56 flex items-center justify-center p-4">
+              <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=600&auto=format&fit=crop" alt="Piano Yamaha P-125" class="img-zoom object-cover w-full h-full rounded-lg">
+              <div class="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-3">
+                <a href="chi-tiet-san-pham.html" class="w-9 h-9 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-blue-700 hover:text-white transition shadow-md">
+                  <i class="fa-regular fa-eye"></i>
+                </a>
+                <button onclick="addToCart({id: 102, name: 'Piano Điện Yamaha P-125B', price: 16900000, image: 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=600&auto=format&fit=crop'})" class="w-9 h-9 rounded-full bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 transition shadow-md">
+                  <i class="fa-solid fa-cart-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-5 flex flex-col flex-1 justify-between">
+              <div>
+                <span class="text-xs text-blue-700 font-bold uppercase">Piano Điện</span>
+                <h3 class="font-bold text-slate-900 text-base mt-1 line-clamp-2 hover:text-blue-700">
+                  <a href="chi-tiet-san-pham.html">Đàn Piano Điện Yamaha P-125B (88 Phím Phím Nặng)</a>
+                </h3>
+              </div>
+              <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div>
+                  <span class="text-base font-extrabold text-blue-700 font-heading">16.900.000đ</span>
+                </div>
+                <button onclick="addToCart({id: 102, name: 'Piano Điện Yamaha P-125B', price: 16900000, image: 'https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=600&auto=format&fit=crop'})" class="px-3 py-1.5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold transition shadow-sm">+ Giỏ</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="product-card bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between shadow-sm relative group">
+            <div class="relative overflow-hidden bg-slate-100 h-56 flex items-center justify-center p-4">
+              <img src="https://images.unsplash.com/photo-1525994886773-080587e161c2?q=80&w=600&auto=format&fit=crop" alt="Saxophone YAS-280" class="img-zoom object-cover w-full h-full rounded-lg">
+              <div class="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-3">
+                <a href="chi-tiet-san-pham.html" class="w-9 h-9 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-blue-700 hover:text-white transition shadow-md">
+                  <i class="fa-regular fa-eye"></i>
+                </a>
+                <button onclick="addToCart({id: 103, name: 'Saxophone Yamaha YAS-280', price: 29500000, image: 'https://images.unsplash.com/photo-1525994886773-080587e161c2?q=80&w=600&auto=format&fit=crop'})" class="w-9 h-9 rounded-full bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 transition shadow-md">
+                  <i class="fa-solid fa-cart-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="p-5 flex flex-col flex-1 justify-between">
+              <div>
+                <span class="text-xs text-blue-700 font-bold uppercase">Saxophone</span>
+                <h3 class="font-bold text-slate-900 text-base mt-1 line-clamp-2 hover:text-blue-700">
+                  <a href="chi-tiet-san-pham.html">Kèn Saxophone Alto Yamaha YAS-280 Gold</a>
+                </h3>
+              </div>
+              <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div>
+                  <span class="text-base font-extrabold text-blue-700 font-heading">29.500.000đ</span>
+                </div>
+                <button onclick="addToCart({id: 103, name: 'Saxophone Yamaha YAS-280', price: 29500000, image: 'https://images.unsplash.com/photo-1525994886773-080587e161c2?q=80&w=600&auto=format&fit=crop'})" class="px-3 py-1.5 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold transition shadow-sm">+ Giỏ</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-slate-900 text-slate-300 pt-12 pb-6 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500">
+      © 2026 Harmonia Music Store.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

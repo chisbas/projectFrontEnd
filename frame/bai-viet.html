@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tin Tức & Kinh Nghiệm Nhạc Cụ - Harmonia Music</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            amber: { 50: '#fffbeb', 100: '#fef3c7', 500: '#f59e0b', 600: '#d97706', 700: '#b45309' },
+            dark: { 900: '#0b0f19', 800: '#0f172a', 700: '#1e293b' }
+          },
+          fontFamily: { heading: ['Outfit', 'sans-serif'], sans: ['Plus Jakarta Sans', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+  <header class="sticky top-0 z-50 glass-nav shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center text-slate-950 font-bold text-xl">
+            <i class="fa-solid fa-music"></i>
+          </div>
+          <div>
+            <span class="font-heading font-extrabold text-2xl tracking-tight text-white block leading-none">HARMONIA</span>
+            <span class="text-[10px] tracking-widest uppercase text-amber-400 font-semibold">Premium Instruments</span>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-200">
+          <a href="index.html" class="hover:text-amber-400">Trang Chủ</a>
+          <a href="san-pham.html" class="hover:text-amber-400">Sản Phẩm</a>
+          <a href="bai-viet.html" class="text-amber-400 font-semibold">Tin Tức</a>
+          <a href="gioi-thieu.html" class="hover:text-amber-400">Giới Thiệu</a>
+          <a href="lien-he.html" class="hover:text-amber-400">Liên Hệ</a>
+        </nav>
+
+        <div class="flex items-center gap-4">
+          <a href="gio-hang.html" class="relative flex items-center justify-center w-10 h-10 rounded-full bg-slate-800 text-slate-300 hover:text-amber-400 transition">
+            <i class="fa-solid fa-cart-shopping text-lg"></i>
+            <span class="cart-badge-count absolute -top-1 -right-1 bg-amber-500 text-slate-950 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="bg-slate-900 text-white py-10 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-3xl font-extrabold font-heading">Tin Tức & Kiến Thức Nhạc Cụ</h1>
+      <p class="text-slate-400 text-sm mt-2 max-w-xl mx-auto">Tổng hợp tư vấn chọn mua, kinh nghiệm luyện tập và bài học nhạc lý cơ bản từ chuyên gia</p>
+    </div>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-1">
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Article Card 1 -->
+      <article class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
+        <div>
+          <a href="chi-tiet-bai-viet.html" class="block overflow-hidden h-52">
+            <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+          </a>
+          <div class="p-6">
+            <span class="text-xs text-amber-600 font-bold uppercase">Tư Vấn Chọn Mua</span>
+            <h2 class="font-bold text-slate-900 text-lg mt-2 hover:text-amber-600 transition line-clamp-2">
+              <a href="chi-tiet-bai-viet.html">Top 5 Cây Đàn Guitar Acoustic Tốt Nhất Cho Người Mới Bắt Đầu 2026</a>
+            </h2>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-3">
+              Tìm hiểu tiêu chí lựa chọn dáng đàn, gỗ làm đàn và ngân sách phù hợp cho hành trình âm nhạc đầu tiên của bạn.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+          <span><i class="fa-regular fa-calendar mr-1"></i> 28/08/2026</span>
+          <a href="chi-tiet-bai-viet.html" class="font-bold text-amber-600 hover:underline">Đọc tiếp →</a>
+        </div>
+      </article>
+
+      <!-- Article Card 2 -->
+      <article class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
+        <div>
+          <a href="chi-tiet-bai-viet.html" class="block overflow-hidden h-52">
+            <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+          </a>
+          <div class="p-6">
+            <span class="text-xs text-amber-600 font-bold uppercase">Kỹ Thuật & Bảo Trị</span>
+            <h2 class="font-bold text-slate-900 text-lg mt-2 hover:text-amber-600 transition line-clamp-2">
+              <a href="chi-tiet-bai-viet.html">Bí Quyết Bảo Quản Đàn Piano Cơ Luôn Giữ Được Âm Thanh Chuẩn Xác</a>
+            </h2>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-3">
+              Độ ẩm và nhiệt độ ảnh hưởng trực tiếp đến bảng cộng hưởng gỗ. Cùng chuyên gia kỹ thuật Harmonia tìm hiểu.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+          <span><i class="fa-regular fa-calendar mr-1"></i> 25/08/2026</span>
+          <a href="chi-tiet-bai-viet.html" class="font-bold text-amber-600 hover:underline">Đọc tiếp →</a>
+        </div>
+      </article>
+
+      <!-- Article Card 3 -->
+      <article class="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
+        <div>
+          <a href="chi-tiet-bai-viet.html" class="block overflow-hidden h-52">
+            <img src="https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+          </a>
+          <div class="p-6">
+            <span class="text-xs text-amber-600 font-bold uppercase">So Sánh Nhạc Cụ</span>
+            <h2 class="font-bold text-slate-900 text-lg mt-2 hover:text-amber-600 transition line-clamp-2">
+              <a href="chi-tiet-bai-viet.html">So Sánh Chi Tiết Trống Điện Tử Và Trống Cơ Cho Căn Hộ Chung Cư</a>
+            </h2>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-3">
+              Nên chọn dòng trống nào để không làm ảnh hưởng hàng xóm mà vẫn mang lại cảm giác đánh chân thực nhất?
+            </p>
+          </div>
+        </div>
+
+        <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+          <span><i class="fa-regular fa-calendar mr-1"></i> 20/08/2026</span>
+          <a href="chi-tiet-bai-viet.html" class="font-bold text-amber-600 hover:underline">Đọc tiếp →</a>
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+
+  <footer class="bg-slate-950 text-slate-300 pt-12 pb-6 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500">
+      © 2026 Harmonia Music Store.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
